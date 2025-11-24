@@ -29,7 +29,7 @@ app.get(
     nonce: "",
   })
 );
-app.get("/docs-swagger", swaggerUi.serve, swaggerUi.setup(openApiSpec));
+app.use("/docs-swagger", swaggerUi.serve, swaggerUi.setup(openApiSpec));
 app.get("/docs-raw", (req, res) => {
   res.json(openApiSpec);
 });
